@@ -4,7 +4,7 @@ export default function Player({ name, symbol }) {
     const [isEditing, setIsEditing] = useState(false)
 
     function handleEditClick() {
-        setIsEditing(!isEditing)
+        setIsEditing((editing) => !editing) // Required to pass function because state update is scheduled, not performed instantly
     }
 
     let playerName = <span className="player-name">{name}</span>
